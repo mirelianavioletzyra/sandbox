@@ -2,6 +2,18 @@
   "dependencies": {
     "axios": "^1.6.5",
     "cheerio": "^1.0.0-rc.12",
+    "express": "^4.18.2",
+    "puppeteer": "^21.7.0",
     "robots-parser": "^3.0.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "sandbox",
+  "description": "1. **Robots.txt Check:** The script first fetches and parses the `robots.txt` file from the base URL of the target website. It then checks if the specific URL (`https://www.instructables.com/spinning-yarn/` in this case) is allowed to be scraped.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

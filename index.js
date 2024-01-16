@@ -44,11 +44,16 @@ async function scrapeData() {
         const $ = cheerio.load(data);
 
         // Extracting the title and description
-        const pageTitle = $('title').text();
-        const pageDescription = $('meta[name="description"]').attr('content');
+        const pageTitle = $('title').text() || 'null';
+        const pageDescription = $('meta[name="description"]').attr('content') || 'null';
+        // Extracting additional metadata
+        const author = $('meta[name="author"]').attr('content') || 'null';
+        const keywords = $('meta[name="keywords"]').attr('content') || 'null';
 
         console.log(`Title: ${pageTitle}`);
         console.log(`Description: ${pageDescription}`);
+        console.log(`Author: ${author}`);
+        console.log(`Keywords: ${keywords}`);
     } catch (error) {
         console.error("Error scraping data: ", error);
     }
@@ -56,4 +61,3 @@ async function scrapeData() {
 
 // Run the function
 scrapeData();
-

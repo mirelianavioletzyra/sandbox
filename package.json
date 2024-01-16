@@ -2,7 +2,6 @@
   "dependencies": {
     "axios": "^1.6.5",
     "cheerio": "^1.0.0-rc.12",
-    "robots-parser": "^3.0.1",
-    "robotstxt": "^0.0.4-7"
+    "robots-parser": "^3.0.1"
   }
 }

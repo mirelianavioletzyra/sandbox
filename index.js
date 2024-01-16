@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const robotsParser = require('robots-parser');
 
 // URL of the page you want to scrape
-const url = 'https://www.instructables.com/spinning-yarn/';
+const url = 'https://data.gov/';
 
 // Base URL for fetching robots.txt
 const baseUrl = new URL(url).origin;
@@ -44,11 +44,11 @@ async function scrapeData() {
         const $ = cheerio.load(data);
 
         // Extracting the title and description
-        const pageTitle = $('title').text() || 'null';
-        const pageDescription = $('meta[name="description"]').attr('content') || 'null';
+        const pageTitle = $('title').text() || null;
+        const pageDescription = $('meta[name="description"]').attr('content') || null;
         // Extracting additional metadata
-        const author = $('meta[name="author"]').attr('content') || 'null';
-        const keywords = $('meta[name="keywords"]').attr('content') || 'null';
+        const author = $('meta[name="author"]').attr('content') || null;
+        const keywords = $('meta[name="keywords"]').attr('content') || null;
 
         console.log(`Title: ${pageTitle}`);
         console.log(`Description: ${pageDescription}`);

@@ -3,6 +3,7 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 // const puppeteer = require('puppeteer'); // Uncomment if using Puppeteer
 
+// This part sets up the node server
 const app = express();
 const port = 3000;
 
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+// This is where the scraping begins 
 app.post('/scrape', async (req, res) => {
     const url = req.body.url;
     // Perform the scraping here using Axios/Cheerio or Puppeteer
@@ -27,8 +29,8 @@ app.post('/scrape', async (req, res) => {
     } catch (error) {
         res.send(`<p>Error: ${error.message}</p>`);
     }
-    });
+});
     
-    app.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-    });
+});
